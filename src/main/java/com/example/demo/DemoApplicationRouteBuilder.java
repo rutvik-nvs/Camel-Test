@@ -22,6 +22,8 @@ public class DemoApplicationRouteBuilder extends RouteBuilder {
                         output = "Test";
                     }
                     exchange.getIn().setBody(output);
+
+                    throw new Exception("Throwing Exception");
                 }
             })
             .log(LoggingLevel.INFO, "CamelTest", "${body}")
